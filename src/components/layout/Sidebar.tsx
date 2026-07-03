@@ -1,14 +1,39 @@
+import { explorerData } from "../../constants/explorerData";
+import { useExplorer } from "../../contexts/ExplorerContext";
+import TreeItem from "../common/TreeItem";
+
 function Sidebar() {
+  const { activeSection } = useExplorer();
+
+  const nodes = explorerData[activeSection] ?? [];
+
   return (
-    <aside className="w-90 border-r border-slate-700 bg-slate-900 p-4">
+    <aside className="w-72 border-r border-[var(--border)] bg-[var(--sidebar)]">
 
-      <h2 className="mb-4 text-lg font-semibold text-white">
-        Explorer
-      </h2>
+      <div className="border-b border-[var(--border)] p-4">
 
-      <p className="text-sm text-slate-600">
-        No folders opened.
-      </p>
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400">
+          Explorer
+        </h2>
+
+      </div>
+
+      <div className="p-2">
+
+        {nodes.length === 0 ? (
+          <p className="p-3 text-sm text-slate-500">
+            Nothing here yet.
+          </p>
+        ) : (
+          nodes.map((node) => (
+            <TreeItem
+              key={node.id}
+              node={node}
+            />
+          ))
+        )}
+
+      </div>
 
     </aside>
   );

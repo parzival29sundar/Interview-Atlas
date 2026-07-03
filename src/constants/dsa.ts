@@ -1,0 +1,42 @@
+export const dsaTopics = [
+  {
+    id: "arrays",
+    title: "Arrays & Hashing",
+    problems: 47,
+    color: "#6366f1",
+    x: 550,
+    y: 40,
+  },
+  {
+    id: "strings",
+    title: "Strings",
+    problems: 31,
+    color: "#8b5cf6",
+    x: 550,
+    y: 180,
+  },
+  {
+    id: "linkedlist",
+    title: "Linked List",
+    problems: 24,
+    color: "#ec4899",
+    x: 550,
+    y: 320,
+  },
+  {
+    id: "trees",
+    title: "Trees",
+    problems: 42,
+    color: "#14b8a6",
+    x: 550,
+    y: 460,
+  },
+  {
+    id: "graphs",
+    title: "Graphs",
+    problems: 38,
+    color: "#f97316",
+    x: 550,
+    y: 600,
+  },
+];

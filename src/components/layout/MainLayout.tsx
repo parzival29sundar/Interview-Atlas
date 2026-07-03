@@ -1,8 +1,7 @@
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import ActivityBar from "./ActivityBar";
 import Workspace from "./Workspace";
 import StatusBar from "./StatusBar";
-import { Outlet } from "react-router-dom";
 
 function MainLayout() {
   return (
@@ -10,13 +9,11 @@ function MainLayout() {
 
       <Navbar />
 
-      <div className="flex flex-1">
+      <div className="flex flex-1 overflow-hidden">
 
-        <Sidebar />
+        <ActivityBar />
 
-        <main className="flex flex-1 bg-slate-950">
-            <Outlet />
-        </main>
+        <Workspace />
 
       </div>
 
