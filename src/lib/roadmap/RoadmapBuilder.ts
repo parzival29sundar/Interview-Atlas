@@ -1,5 +1,7 @@
 import type { Edge, Node } from "@xyflow/react";
+
 import { dsaTopics } from "../../constants/dsa";
+import { getLayoutedElements } from "./layout";
 
 export function buildDSARoadmap(): {
   nodes: Node[];
@@ -10,8 +12,8 @@ export function buildDSARoadmap(): {
       id: "root",
       type: "rootNode",
       position: {
-        x: 100,
-        y: 300,
+        x: 0,
+        y: 0,
       },
       data: {
         title: "DSA Roadmap",
@@ -30,8 +32,8 @@ export function buildDSARoadmap(): {
       id: topic.id,
       type: "topicNode",
       position: {
-        x: topic.x,
-        y: topic.y,
+        x: 0,
+        y: 0,
       },
       data: {
         ...topic,
@@ -44,12 +46,9 @@ export function buildDSARoadmap(): {
       id: `edge-${index}`,
       source: "root",
       target: topic.id,
-      animated: true,
+      type: "default",
     });
   });
 
-  return {
-    nodes,
-    edges,
-  };
+  return getLayoutedElements(nodes, edges);
 }

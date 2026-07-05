@@ -1,0 +1,29 @@
+.react-flow {
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+}
+
+.react-flow__background pattern circle {
+  fill: rgba(255,255,255,.08);
+}
+
+.react-flow__edge-path {
+  stroke-width: 3;
+  stroke: #3b82f6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.react-flow__controls {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.react-flow__minimap {
+  background: #0f172a;
+  border-radius: 12px;
+}
+
+.react-flow__attribution{
+  display:none;
+}

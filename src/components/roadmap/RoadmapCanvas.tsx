@@ -1,23 +1,28 @@
 import "@xyflow/react/dist/style.css";
 
 import {
-  ReactFlow,
   Background,
   Controls,
   MiniMap,
+  ReactFlow,
 } from "@xyflow/react";
-
-import {
-  initialNodes,
-  initialEdges,
-} from "../../constants/roadmap";
 
 import RootNode from "./RootNode";
 import TopicNode from "./TopicNode";
+import GradientEdge from "./GradientEdge";
+
+import {
+  initialEdges,
+  initialNodes,
+} from "../../constants/roadmap";
 
 const nodeTypes = {
   rootNode: RootNode,
   topicNode: TopicNode,
+};
+
+const edgeTypes = {
+  default: GradientEdge,
 };
 
 function RoadmapCanvas() {
@@ -27,10 +32,13 @@ function RoadmapCanvas() {
         nodes={initialNodes}
         edges={initialEdges}
         nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
         fitView
       >
         <Background />
+
         <Controls />
+
         <MiniMap />
       </ReactFlow>
     </div>
