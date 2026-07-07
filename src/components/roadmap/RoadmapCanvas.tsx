@@ -11,10 +11,9 @@ import RootNode from "./RootNode";
 import TopicNode from "./TopicNode";
 import GradientEdge from "./GradientEdge";
 
-import {
-  initialEdges,
-  initialNodes,
-} from "../../constants/roadmap";
+import { buildDSARoadmap } from "../../lib/roadmap/RoadmapBuilder";
+
+import { useRoadmap } from "../../contexts/RoadmapContext";
 
 const nodeTypes = {
   rootNode: RootNode,
@@ -22,15 +21,21 @@ const nodeTypes = {
 };
 
 const edgeTypes = {
-  default: GradientEdge,
+  gradient: GradientEdge,
 };
 
 function RoadmapCanvas() {
+  const { expandedNodes } =
+    useRoadmap();
+
+  const { nodes, edges } =
+    buildDSARoadmap(expandedNodes);
+
   return (
     <div className="h-full w-full">
       <ReactFlow
-        nodes={initialNodes}
-        edges={initialEdges}
+        nodes={nodes}
+        edges={edges}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         fitView

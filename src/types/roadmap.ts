@@ -11,21 +11,21 @@ export interface RoadmapNodeData {
 
   color: string;
 
+  icon: string;
+
+  difficulty: "Easy" | "Medium" | "Hard";
+
+  estimatedHours: number;
+
   problems: number;
 
   completed: number;
 
   progress: number;
 
-  difficulty: "Easy" | "Medium" | "Hard";
-
-  estimatedHours: number;
-
-  icon: string;
-
   description: string;
 
   resources: Resource[];
 
-  children?: string[];
+  children?: RoadmapNodeData[];
 }
