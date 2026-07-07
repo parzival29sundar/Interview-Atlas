@@ -1,14 +1,40 @@
-# Database
+# Roadmap Collection
 
-Planned Tables
+roadmaps
 
-- users
-- roles
-- learning_paths
-- categories
-- sections
-- problems
-- resources
-- progress
-- notes
-- bookmarks
+{
+  _id,
+  title,
+  slug,
+  description,
+  roadmapType
+}
+
+roadmap_nodes
+
+{
+  _id,
+  roadmapId,
+  parentId,
+  title,
+  icon,
+  color,
+  difficulty,
+  estimatedHours,
+  resources,
+  order
+}
+
+Relationships
+
+Roadmap
+    ↓
+Topic
+    ↓
+Pattern
+    ↓
+Problem
+    ↓
+Resource
+
+Frontend already supports unlimited nesting through recursive children arrays.

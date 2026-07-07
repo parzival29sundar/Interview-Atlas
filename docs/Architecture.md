@@ -1,19 +1,34 @@
-# Architecture
+# Roadmap Engine
 
-Frontend
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
+Current Architecture
 
-Backend
-- Supabase
+RoadmapContext
+    ↓
+RoadmapCanvas
+    ↓
+RoadmapBuilder
+    ↓
+React Flow
 
-Database
-- PostgreSQL
+Roadmap Data
 
-Authentication
-- Supabase Auth
+Roadmap
+ ├ Topic
+ │  ├ Pattern
+ │  ├ Pattern
+ │  └ Pattern
+ │
+ └ Topic
+    ├ Pattern
+    └ Pattern
 
-Deployment
-- Vercel
+RoadmapBuilder recursively traverses the roadmap tree and generates:
+
+- React Flow Nodes
+- React Flow Edges
+
+Expansion State
+
+expandedNodes: string[]
+
+Currently supports accordion expansion where only one branch is expanded at a time.
